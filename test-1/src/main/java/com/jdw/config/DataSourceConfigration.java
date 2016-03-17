@@ -16,7 +16,7 @@ public class DataSourceConfigration {
 	private  ConfigBean configBean;
 	@Bean(name="dataSource",destroyMethod="close",initMethod="init")
 	public DruidDataSource initDataSource(){
-		logger.info("初始化数据源【DruidDataSource】开始~~~~~~~");
+		logger.info("----------------------- init DruidDataSource start -----------------------");
 		DruidDataSource dataSource=new DruidDataSource();
 		dataSource.setDriverClassName(configBean.getDriverClassName());
 		dataSource.setUrl(configBean.getUrl());
@@ -50,7 +50,7 @@ public class DataSourceConfigration {
 		} catch (SQLException e) {
 
 		}
-		logger.info("初始化数据源【DruidDataSource】成功~~~~~~~");
+		logger.info("-----------------------DruidDataSource-----------------------");
 		return dataSource;
 	}
 	
