@@ -4,6 +4,22 @@
 	<groupId>com.transaction</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<artifactId>distribut-transaction</artifactId>
+	 <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+        <repository>
+			<id>maven-central</id>
+			<url>http://mvnrepository.com/maven2/</url>
+		</repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 	<properties>
 	<java.version>1.6</java.version>
 	</properties>
