@@ -17,7 +17,7 @@ import com.v5ent.distribut.entities.TransactionLock;
 
 /**
  * 分布式事务执行者
- * @author qhq
+ * @author Mignet
  *
  */
 public class DistributTransactionManager implements DisposableBean{
