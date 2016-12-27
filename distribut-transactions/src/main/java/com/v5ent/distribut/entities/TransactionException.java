@@ -5,21 +5,10 @@ package com.v5ent.distribut.entities;
  */
 public class TransactionException extends RuntimeException {
 	
-	private static final long serialVersionUID = 1L;
-	
-	/*private String massage;
-
-	public String getMassage() {
-		return massage;
-	}
-
-	public void setMassage(String massage) {
-		this.massage = massage;
-	}*/
+	private static final long serialVersionUID = 728848033031216497L;
 
 	public TransactionException(String massage) {
 		super(massage);
-//		this.massage = massage;
 	}
 	
 	public TransactionException(Throwable e) {

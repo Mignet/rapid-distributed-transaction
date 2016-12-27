@@ -66,7 +66,7 @@ public class DistributTransactionInterceptor{
 				}
 				//线程超时没有返回，抛出异常，事务回滚
 				long count = lock.getTimeout();
-				while (!result.isEnd()) {
+				while (!result.isEnded()) {
 					count -= 200;
 					try {
 						Thread.sleep(200);
@@ -75,12 +75,12 @@ public class DistributTransactionInterceptor{
 					if (count <= 0) {
 						logger.debug("<-- distribut transaction timeout 调用超时没有返回，抛出异常，事务回滚 ,这通常意味着dubbo服务没有启动-->");
 						client.setData().forPath(path, "-2".getBytes());
-						result.setEnd(true);
+						result.setEnded(true);
 						//这里需要抛出异常，让事务回滚
 						throw new TransactionException("<-- distribut transaction timeout rollback!调用超时没有返回，抛出异常，事务回滚 ,这通常意味着dubbo服务没有启动 -->");
 					}
 				}
-				if (!result.hasResult()) {
+				if (!result.isHasResult()) {
 					logger.debug("<-- distribut transaction exception rollback! 这通常意味着方法在执行中报错 -->");
 					throw new TransactionException("<-- distribut transaction exception rollback! 这通常意味着方法在执行中报错 -->");
 				}
@@ -144,15 +144,15 @@ public class DistributTransactionInterceptor{
 							logger.debug("zk notify event "+event.getType().name()+" finish data is "+data+"-->");
 							datas.add(data);
 							if (StringUtils.isEmpty(data)) {
-								result.setEnd(false);
+								result.setEnded(false);
 								return;
 							}
 						}
-						result.setResult(true);
-						result.setEnd(true);
+						result.setHasResult(true);
+						result.setEnded(true);
 						for (String data : datas) {
 							if ("-1".equals(data)||"-2".equals(data)) {
-								result.setResult(false);
+								result.setHasResult(false);
 								break;
 							}
 						}
