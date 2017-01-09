@@ -31,6 +31,17 @@ public class UserService implements IUserService{
 		User record=new User();
 		BeanUtils.copyProperties(user, record);
 		i = userMapper.insert(record);
+//		try {
+			testError(i);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		return i;
+	}
+	@Transactional
+	public void testError(int i){
+		Object o = null;
+		o.getClass();
+//		i=i/0;
 	}
 }
