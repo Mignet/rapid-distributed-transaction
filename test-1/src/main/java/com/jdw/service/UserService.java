@@ -32,7 +32,7 @@ public class UserService implements IUserService{
 		BeanUtils.copyProperties(user, record);
 		i = userMapper.insert(record);
 //		try {
-			testError(i);
+//			testError(i);
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
