@@ -1,2 +1,2 @@
 # rapid-distributed-transaction
-Zookeeper distributed transaction example
+2p (Zookeeper) distributed transaction example
