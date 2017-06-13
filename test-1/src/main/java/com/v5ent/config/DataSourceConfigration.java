@@ -1,4 +1,4 @@
-package com.jdw.config;
+package com.v5ent.config;
 import java.sql.SQLException;
 
 import org.apache.log4j.Logger;

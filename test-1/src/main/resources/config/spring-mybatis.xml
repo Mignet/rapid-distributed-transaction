@@ -14,12 +14,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
-		<property name="mapperLocations" value="classpath:com/jdw/mapper/*.xml" />
-		<property name="typeAliasesPackage" value="com.jdw.entity" />
+		<property name="mapperLocations" value="classpath:com/v5ent/mapper/*.xml" />
+		<property name="typeAliasesPackage" value="com.v5ent.entity" />
 	</bean>
 	<!-- -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.jdw.mapper" />
+		<property name="basePackage" value="com.v5ent.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
@@ -46,7 +46,7 @@
 	<!-- 配置分布式事务aop -->
 	<aop:config proxy-target-class="true">
 		<aop:aspect ref="distributTransactionInterceptor">
-			<aop:pointcut id="performance" expression="execution(* com.jdw.service.*.*(..))" />
+			<aop:pointcut id="performance" expression="execution(* com.v5ent.service.*.*(..))" />
 			<aop:around pointcut-ref="performance" method="doAround" />
 		</aop:aspect>
 	</aop:config>

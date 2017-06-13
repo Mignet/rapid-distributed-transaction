@@ -1,4 +1,4 @@
-package com.jdw.config;
+package com.v5ent.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

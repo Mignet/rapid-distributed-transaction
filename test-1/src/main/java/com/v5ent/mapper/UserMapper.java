@@ -1,9 +1,10 @@
-package com.jdw.mapper;
+package com.v5ent.mapper;
 
-import com.jdw.entity.User;
-import com.jdw.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import com.v5ent.entity.User;
+import com.v5ent.entity.UserExample;
 
 public interface UserMapper {
 

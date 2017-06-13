@@ -1,4 +1,4 @@
-package com.jdw.service;
+package com.v5ent.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hd.domain.vo.UserVo;
 import com.hd.interfaces.IUserService;
-import com.jdw.entity.User;
-import com.jdw.mapper.UserMapper;
 import com.v5ent.distribut.entities.TransactionLock;
+import com.v5ent.entity.User;
+import com.v5ent.mapper.UserMapper;
 @Service
 public class UserService implements IUserService{
 	@Autowired
